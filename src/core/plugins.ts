@@ -48,8 +48,6 @@ export function buildPluginMap(
     inlinePlugins: InlinePlugin[]
 ): Map<MarkType, RenderablePlugin> {
     return new Map<MarkType, RenderablePlugin>(
-        [...blockPlugins, ...inlinePlugins].map(
-            (p): [MarkType, RenderablePlugin] => [p.name, p]
-        )
+        [...blockPlugins, ...inlinePlugins].map((p): [MarkType, RenderablePlugin] => [p.name, p])
     );
 }

@@ -41,10 +41,6 @@ export function parseInline(text: string, plugins: InlinePlugin[]): ASTNode[] {
 }
 
 /** 判断 pos 处是否可能是某个行内插件的起点 */
-function mightBeInlineStart(
-    text: string,
-    pos: number,
-    plugins: InlinePlugin[]
-): boolean {
-    return plugins.some(p => p.match(text, pos) !== null);
+function mightBeInlineStart(text: string, pos: number, plugins: InlinePlugin[]): boolean {
+    return plugins.some((p) => p.match(text, pos) !== null);
 }

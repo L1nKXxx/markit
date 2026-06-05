@@ -10,9 +10,7 @@ export function render(node: ASTNode): string {
     const depth = node.depth ?? 1;
     const tag = `h${Math.min(depth, 6)}`;
 
-    const inner = node.children
-        ? renderChildren(node.children, getRenderPlugins())
-        : node.content;
+    const inner = node.children ? renderChildren(node.children, getRenderPlugins()) : node.content;
 
     return `<${tag}>${inner}</${tag}>`;
 }

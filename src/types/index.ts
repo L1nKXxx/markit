@@ -6,15 +6,15 @@ export const MARK_TYPE = {
     LINK: "link",
     IMAGE: "image",
     LIST: "list",
-    TEXT: "text"
+    TEXT: "text",
 } as const;
 
-export type MarkType = typeof MARK_TYPE[keyof typeof MARK_TYPE];
+export type MarkType = (typeof MARK_TYPE)[keyof typeof MARK_TYPE];
 
 export interface InlineMatch {
-    raw: string;      // 原文中匹配到的完整片段
-    content: string;  // 去掉标记后的核心文字（bold 时即加粗内容）
-    endPos: number;   // 下一个未处理字符的下标
+    raw: string; // 原文中匹配到的完整片段
+    content: string; // 去掉标记后的核心文字（bold 时即加粗内容）
+    endPos: number; // 下一个未处理字符的下标
 }
 
 export interface BlockPlugin extends RenderablePlugin {
@@ -23,7 +23,7 @@ export interface BlockPlugin extends RenderablePlugin {
 }
 // 3. 行内插件 = 匹配 + 解析 + 渲染
 export interface InlinePlugin extends RenderablePlugin {
-    match: (text: string, pos: number) => InlineMatch | null;  // 见下文
+    match: (text: string, pos: number) => InlineMatch | null; // 见下文
     parse: (token: Token) => ASTNode;
 }
 export interface RenderablePlugin {
@@ -33,7 +33,7 @@ export interface RenderablePlugin {
 
 export interface Token {
     type: MarkType;
-    raw: string
+    raw: string;
     content: string;
     depth?: number; //heading的层级
     lang?: string; // code block的语言

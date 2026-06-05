@@ -1,9 +1,6 @@
 import { ASTNode, MARK_TYPE, MarkType, RenderablePlugin } from "../types";
 
-export function renderNode(
-    node: ASTNode,
-    plugins: Map<MarkType, RenderablePlugin>
-): string {
+export function renderNode(node: ASTNode, plugins: Map<MarkType, RenderablePlugin>): string {
     if (node.type === MARK_TYPE.TEXT) {
         return node.content;
     }
@@ -19,5 +16,5 @@ export function renderChildren(
     plugins: Map<MarkType, RenderablePlugin>
 ): string {
     if (!nodes?.length) return "";
-    return nodes.map(n => renderNode(n, plugins)).join("");
+    return nodes.map((n) => renderNode(n, plugins)).join("");
 }

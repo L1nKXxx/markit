@@ -7,9 +7,7 @@ export function render(node: ASTNode): string {
         throw new Error(`Expected bold node, got ${node.type}`);
     }
 
-    const inner = node.children
-        ? renderChildren(node.children, getRenderPlugins())
-        : node.content;
+    const inner = node.children ? renderChildren(node.children, getRenderPlugins()) : node.content;
 
     return `<strong>${inner}</strong>`;
 }

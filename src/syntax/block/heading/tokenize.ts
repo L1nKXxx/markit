@@ -1,4 +1,3 @@
-
 import { MARK_TYPE, Token } from "../../../types";
 
 const HEADING = /^ *(#{1,6}) +([^\n]+?) *#* *$/;

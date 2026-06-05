@@ -1,17 +1,15 @@
 {
-  "compilerOptions": {
-    "target": "ES2022",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "declaration": true, // 允许生成 .d.ts 文件
-    "strict": true, // 开启严格模式
-    "esModuleInterop": true, // 允许 CJS 和 ESM 混用
-    "skipLibCheck": true, // 跳过第三方库的类型检查
-    "forceConsistentCasingInFileNames": true,
-    "rootDir": "./src",
-    "outDir": "./dist"
-  },
-  "include": [
-    "src/**/*"
-  ]
+    "compilerOptions": {
+        "target": "ES2022",
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "declaration": true, // 允许生成 .d.ts 文件
+        "strict": true, // 开启严格模式
+        "esModuleInterop": true, // 允许 CJS 和 ESM 混用
+        "skipLibCheck": true, // 跳过第三方库的类型检查
+        "forceConsistentCasingInFileNames": true,
+        "rootDir": "./src",
+        "outDir": "./dist"
+    },
+    "include": ["src/**/*"]
 }
